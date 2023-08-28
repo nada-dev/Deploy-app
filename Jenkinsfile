@@ -18,9 +18,11 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                // Use testing frameworks and scripts to run unit tests
-                npm install
-                sh 'npm test'
+                script {
+                    // Use testing frameworks and scripts to run unit tests
+                    sh 'npm install'
+                    sh 'npm test'
+                }
             }
         }
 
@@ -37,4 +39,3 @@ pipeline {
 
     // Add post-build actions, notifications, etc.
 }
-
