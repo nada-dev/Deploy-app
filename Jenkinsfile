@@ -1,13 +1,6 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
+  
     stage  ("Install dependeincies") {
       agent {
         docker {image 'node:lts-buster-slim'}
