@@ -8,14 +8,14 @@ pipeline {
             }
         }
 
-    stage  ("Install dependeincies") {
-      agent {
-        docker {image 'node:lts-buster-slim'}
-      }
-      steps {
-        sh 'npm install'
-      }
-    }
+        stage('Install Dependencies') {
+            steps {
+                sh 'curl -sL https://deb.nodesource.com/setup_18.x | bash -'
+                sh 'apt-get install -y nodejs'
+                sh 'npm install -g npm'
+            }
+        }
+
         stage('Run Unit Tests') {
             steps {
                 script {
@@ -39,4 +39,3 @@ pipeline {
 
     // Add post-build actions, notifications, etc.
 }
-
