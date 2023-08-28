@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("Install Dependencies") {
             agent {
-                docker { image 'node:lts-buster-slim' }
+                docker { image 'node:18' }
             }
             steps {
                 sh 'npm install'
