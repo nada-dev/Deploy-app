@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Use testing frameworks and scripts to run unit tests
-                    sh 'npm install'
+                    //sh 'npm install'
                     sh 'npm test'
                 }
             }
