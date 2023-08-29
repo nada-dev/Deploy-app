@@ -13,7 +13,6 @@ pipeline {
         docker {image 'node:18'}
       }
       steps {
-        sh 'docker ps'
         sh 'apt-get update && apt-get install -y git' // Install Git
         sh 'npm install'
       }
