@@ -18,12 +18,11 @@ pipeline {
       }
     }
         stage('Run Unit Tests') {
+            agent {
+                docker { image 'node:18' }
+            }
             steps {
-                script {
-                    // Use testing frameworks and scripts to run unit tests
-                    //sh 'npm install'
-                    sh 'npm test'
-                }
+                sh 'npm test'
             }
         }
 
