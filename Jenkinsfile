@@ -31,7 +31,7 @@ pipeline {
                 docker { image 'node:18' }
             }
             steps {
-                sh 'npm build'
+                sh 'npm run build'
             }
         }
 
