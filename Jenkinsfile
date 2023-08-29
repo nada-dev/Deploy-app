@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh 'git config user.name "nada-dev"'
-                sh 'git config user.email "nadaaymanatia@aucegypt.edu'
+                sh 'git config user.name "nada-dev"
+                sh 'git config user.email "nadaaymanatia@aucegypt.edu"
                 checkout scm
             }
         }
