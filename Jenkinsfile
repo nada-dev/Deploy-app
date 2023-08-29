@@ -14,7 +14,7 @@ pipeline {
       }
       steps {
         sh 'apt-get update && apt-get install -y git' // Install Git
-        sh 'npm install -g cross-env'
+        sh 'npm install --global cross-env'
         sh 'npm install'
       }
     }
