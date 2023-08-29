@@ -13,6 +13,8 @@ pipeline {
         docker {image 'node:18'}
       }
       steps {
+        sh 'apt-get update && apt-get install -y git' // Install Git
+        sh 'npm install --global cross-env'
         sh 'npm install'
       }
     }
