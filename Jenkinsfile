@@ -33,7 +33,7 @@ pipeline {
             }
             steps {
                 
-                sh 'cross-env NODE_NO_WARNINGS=1 node scripts/generate-next-data/index.mjs'
+                sh 'npx cross-env NODE_NO_WARNINGS=1 node scripts/generate-next-data/index.mjs'
                 sh 'npm build'
             }
         }
