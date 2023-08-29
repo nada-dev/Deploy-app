@@ -14,6 +14,7 @@ pipeline {
       }
       steps {
         sh 'apt-get update && apt-get install -y git' // Install Git
+        sh 'npm install -g cross-env'
         sh 'npm install'
       }
     }
@@ -31,6 +32,7 @@ pipeline {
                 docker { image 'node:18' }
             }
             steps {
+                
                 sh 'cross-env NODE_NO_WARNINGS=1 node scripts/generate-next-data/index.mjs'
                 sh 'npm build'
             }
