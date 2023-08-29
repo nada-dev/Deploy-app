@@ -27,7 +27,7 @@ pipeline {
         }
 
         stage('Run Build') {
-            gent {
+            agent {
                 docker { image 'node:18' }
             }
             steps {
