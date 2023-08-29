@@ -28,12 +28,11 @@ pipeline {
         }
 
         stage('Run Build') {
-            agent {
-                docker { image 'node:18' }
-            }
+            // agent {
+            //     docker { image 'node:18' }
+            // }
             steps {
                 
-                sh 'npx cross-env NODE_NO_WARNINGS=1 node scripts/generate-next-data/index.mjs'
                 sh 'npm build'
             }
         }
