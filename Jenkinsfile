@@ -27,10 +27,11 @@ pipeline {
         }
 
         stage('Run Build') {
+            gent {
+                docker { image 'node:18' }
+            }
             steps {
-                // Build your Node.js application
                 sh 'npm build'
-                // You can also copy or package your build artifacts here
             }
         }
 
